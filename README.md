@@ -17,7 +17,7 @@ D1337 is the skill definition for **KAIROS** — a research-backed AI agent for 
 ```
 D1337/
 ├── SKILL.md                          # Core skill definition (7-layer architecture)
-├── d1337-agent.md                    # Complete agent definition (2,890 lines)
+├── d1337-agent.md                    # Complete agent definition
 ├── README.md                         # This file
 ├── references/                       # Kill-chain rule files (9 phases)
 │   ├── rule-00-scope.md              # MANDATORY — scope enforcement before ANY action
@@ -72,6 +72,23 @@ D1337/
 - **Kill switch**: Soft stop → Hard stop → Emergency isolation → State capture
 - **Scope enforcement**: Mandatory at EVERY tool call
 - **EU AI Act compliant**: Human oversight for all destructive actions
+
+## Cleanup Notice
+
+This repository was previously overwritten with the wrong project (D1337 Sovereign Labs platform). The correct D1337 skill files have been restored. If you see leftover folders (`agents/`, `cmd/`, `docs/`, `images/`, `internal/`, `knowledge_base/`, `mcp-servers/`, `plugins/`, `roles/`, `skills/`, `tools/`, `web/`) or files (`go.sum`, `requirements.txt`, `run.sh`, `upgrade.sh`, `config.example.yaml`, `README_ID.md`, `.gitignore`, `LICENSE`) from the old project, please delete them manually:
+
+```bash
+git clone https://github.com/imtcl/D1337.git
+cd D1337
+# Remove leftover folders from wrong repo
+rm -rf agents cmd docs images internal knowledge_base mcp-servers plugins roles skills tools web
+# Remove leftover files from wrong repo
+rm -f go.sum requirements.txt run.sh upgrade.sh config.example.yaml README_ID.md .gitignore LICENSE
+# Keep only D1337 skill files
+git add -A
+git commit -m "Cleanup: Remove all wrong repo artifacts"
+git push origin main
+```
 
 ## Author
 
