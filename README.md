@@ -73,20 +73,41 @@ D1337/
 - **Scope enforcement**: Mandatory at EVERY tool call
 - **EU AI Act compliant**: Human oversight for all destructive actions
 
-## Cleanup Notice
+## Cleanup Required (Run This)
 
-This repository was previously overwritten with the wrong project (D1337 Sovereign Labs platform). The correct D1337 skill files have been restored. If you see leftover folders (`agents/`, `cmd/`, `docs/`, `images/`, `internal/`, `knowledge_base/`, `mcp-servers/`, `plugins/`, `roles/`, `skills/`, `tools/`, `web/`) or files (`go.sum`, `requirements.txt`, `run.sh`, `upgrade.sh`, `config.example.yaml`, `README_ID.md`, `.gitignore`, `LICENSE`) from the old project, please delete them manually:
+This repository was previously overwritten with the wrong project (D1337 Sovereign Labs platform). The correct D1337 skill files have been pushed, but **12 leftover directories** from the old project remain. Run this to clean up:
 
 ```bash
+# Clone the repo
 git clone https://github.com/imtcl/D1337.git
 cd D1337
-# Remove leftover folders from wrong repo
+
+# Remove leftover directories from wrong repo (D1337 Sovereign Labs)
 rm -rf agents cmd docs images internal knowledge_base mcp-servers plugins roles skills tools web
-# Remove leftover files from wrong repo
-rm -f go.sum requirements.txt run.sh upgrade.sh config.example.yaml README_ID.md .gitignore LICENSE
-# Keep only D1337 skill files
+
+# Stage all changes
 git add -A
-git commit -m "Cleanup: Remove all wrong repo artifacts"
+
+# Commit cleanup
+git commit -m "Cleanup: Remove all D1337 Sovereign Labs artifacts
+
+Previous repo content (D1337 Sovereign Labs platform) has been
+replaced with the correct D1337 KAIROS Offensive Operations Skill.
+
+Deleted:
+- 12 directories: agents, cmd, docs, images, internal,
+  knowledge_base, mcp-servers, plugins, roles, skills, tools, web
+- 8 files: .gitignore, go.mod, go.sum, LICENSE, README_ID.md,
+  config.example.yaml, requirements.txt, run.sh, upgrade.sh
+
+Kept (correct D1337 skill):
+- SKILL.md (core skill definition)
+- d1337-agent.md (agent definition)
+- README.md (documentation)
+- references/ (9 kill-chain rules P0-P8)
+- scripts/ (arsenal utilities)"
+
+# Push
 git push origin main
 ```
 
